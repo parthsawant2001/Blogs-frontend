@@ -7,17 +7,17 @@ const Header = () => {
   const { setUserInfo, userInfo } = useContext(UserContext);
 
   useEffect(() => {
-    fetch('http://localhost:3000/profile', { credentials: 'include' }).then(
-      (response) => {
-        response.json().then((userInfo) => {
-          setUserInfo(userInfo);
-        });
-      }
-    );
+    fetch('https://blogs-api-s5vy.onrender.com/profile', {
+      credentials: 'include',
+    }).then((response) => {
+      response.json().then((userInfo) => {
+        setUserInfo(userInfo);
+      });
+    });
   }, []);
 
   const logout = () => {
-    fetch('http://localhost:3000/logout', {
+    fetch('https://blogs-api-s5vy.onrender.com/logout', {
       credentials: 'include',
       method: 'POST',
     });

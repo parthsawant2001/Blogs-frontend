@@ -11,7 +11,7 @@ const PostPage = () => {
 
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:3000/post/${id}`).then((response) => {
+    fetch(`https://blogs-api-s5vy.onrender.com/post/${id}`).then((response) => {
       response.json().then((postInfo) => {
         setPostInfo(postInfo);
       });
@@ -49,7 +49,10 @@ const PostPage = () => {
         </div>
       )}
       <div className='image'>
-        <img src={`http://localhost:3000/${postInfo.cover}`} alt='' />
+        <img
+          src={`https://blogs-api-s5vy.onrender.com/${postInfo.cover}`}
+          alt=''
+        />
       </div>
       <div
         className='content'

@@ -20,7 +20,7 @@ const CreatePost = () => {
     data.set('file', files[0]);
 
     e.preventDefault();
-    const response = await fetch('http://localhost:3000/post', {
+    const response = await fetch('https://blogs-api-s5vy.onrender.com/post', {
       method: 'POST',
       body: data,
       credentials: 'include',

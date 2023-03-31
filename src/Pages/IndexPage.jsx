@@ -5,7 +5,7 @@ const IndexPage = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/post').then((response) => {
+    fetch('https://blogs-api-s5vy.onrender.com/post').then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
       });
