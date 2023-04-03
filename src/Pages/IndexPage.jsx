@@ -12,7 +12,15 @@ const IndexPage = () => {
       });
     });
   }, []);
-  return <>{!posts ? posts.map((post) => <Post {...post} />) : <Loading />} </>;
+  return (
+    <>
+      {!posts.length > 0 ? (
+        posts.map((post) => <Post {...post} />)
+      ) : (
+        <Loading />
+      )}{' '}
+    </>
+  );
 };
 
 export default IndexPage;
