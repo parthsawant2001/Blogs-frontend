@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
+import Loading from '../Components/Loading';
 import Post from '../Components/Post';
 const IndexPage = () => {
   const [posts, setPosts] = useState([]);
@@ -11,7 +12,7 @@ const IndexPage = () => {
       });
     });
   }, []);
-  return <>{posts.length > 0 && posts.map((post) => <Post {...post} />)}</>;
+  return <>{!posts ? posts.map((post) => <Post {...post} />) : <Loading />} </>;
 };
 
 export default IndexPage;
